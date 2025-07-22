@@ -4,7 +4,7 @@
     {
         public static string StaticField = "Sethu";    
 
-        public static void StaticMethod()
+        public static void StaticMethod() // This method is belongs to class so can't be called using object directly be called- if called using object we will get compile time error
         {
             Console.WriteLine($"Staticmethod using the staticfield {StaticField}");
         }
