@@ -1,0 +1,77 @@
+public interface IMessageService
+{
+    string GetMessage();
+}
+
+public class MessageService : IMessageService
+{
+    private readonly int _randomNumber;
+
+    public MessageService()
+    {
+        // Assign a random number when object is created
+        _randomNumber = new Random().Next(1000, 9999);
+    }
+
+    public string GetMessage()
+    {
+        return $"Random number from service: {_randomNumber}";
+    }
+}
+
+//Program.cs
+var builder = WebApplication.CreateBuilder(args);
+
+// 1️⃣ Transient: New object every time it's requested
+builder.Services.AddTransient<IMessageService, MessageService>();
+
+// 2️⃣ Scoped: One object per HTTP request
+builder.Services.AddScoped<IMessageService, MessageService>();
+
+// 3️⃣ Singleton: One object for the entire app lifetime
+builder.Services.AddSingleton<IMessageService, MessageService>();
+
+var app = builder.Build();
+
+// Minimal API endpoint to test
+app.MapGet("/", (IMessageService message1, IMessageService message2) =>
+{
+    return new
+    {
+        FirstCall = message1.GetMessage(),
+        SecondCall = message2.GetMessage()
+    };
+});
+app.Run();
+
+
+//OUTPUT
+//AddTransient
+Every time you request IMessageService, you get a fresh new object.
+Even inside the same request, the two injected services will have different random numbers.
+
+{
+  "FirstCall": "Random number from service: 4821",
+  "SecondCall": "Random number from service: 7193"
+}
+
+//AddScoped
+You get one object per request.
+Inside the same HTTP request, the two injections share the same instance.
+Different requests get different instances.
+
+{
+  "FirstCall": "Random number from service: 5532",
+  "SecondCall": "Random number from service: 5532"
+}
+
+//AddSingleton
+One object for the entire lifetime of the app.
+Same instance is used for all requests.
+
+{
+  "FirstCall": "Random number from service: 8841",
+  "SecondCall": "Random number from service: 8841"
+}
+
+
