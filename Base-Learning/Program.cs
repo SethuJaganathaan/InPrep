@@ -453,4 +453,28 @@ class Program
         }
     }
     #endregion
+
+    #region Sorting Array by Keyword
+    public static void MainSortBy(string[] args)
+    {
+        int[] arr1 = { 3,4,2,5,1 };
+        int[] arr2 = { 10,7,9,6,8 };
+        
+        int[] merged = new int[arr1.Length + arr2.Length];
+
+        arr1.CopyTo(merged, 0);
+        arr2.CopyTo(merged, arr1.Length);
+        
+        //int[] merged = arr1.Concat(arr2).ToArray();
+        
+        //Array.Sort(merged);
+        foreach(int aftersort in merged){
+            Console.Write(aftersort + " ");
+        }
+        
+        foreach(int after in merged){
+            Console.WriteLine(after);
+        }
+    }
+    #endregion
 }
