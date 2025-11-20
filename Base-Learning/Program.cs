@@ -410,4 +410,47 @@ class Program
         return len * wid;
     }
     #endregion
+
+    #region Bubble Sort
+    public static void MainBubbleSort(string[] args)
+    {
+        int[] arr1 = { 3,4,2,5,1 };
+        int[] arr2 = { 10,7,9,6,8 };
+        
+        int[] merged = new int[arr1.Length + arr2.Length];
+        
+        for(int i = 0; i < arr1.Length; i++){
+            merged[i] = arr1[i];
+        }
+        
+        for(int i = 0; i < arr2.Length; i++){
+            merged[arr1.Length + i] = arr2[i];
+        }
+        
+        Console.WriteLine("Before Sorting");
+        for(int i = 0; i < merged.Length; i++){
+            Console.Write(merged[i] + " ");
+        }
+        
+        //Array.Sort(merged);
+        //foreach(int aftersort in merged){
+            //Console.Write(aftersort + " ");
+        //}
+        
+        Console.WriteLine("Sort Using Loop");
+        for(int i = 0; i < merged.Length - 1; i++){
+            for(int j = 0; j < merged.Length - 1 - i; j++){
+                if(merged[j] > merged[j + 1]){
+                    int temp = merged[j];
+                    merged[j] = merged[j + 1];
+                    merged[j + 1] = temp;
+                }
+            }
+        }
+        
+        foreach(int after in merged){
+            Console.WriteLine(after);
+        }
+    }
+    #endregion
 }
