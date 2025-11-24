@@ -16,3 +16,73 @@ C#
           value = 69;
       }
     }
+
+
+----------------------------------------------------------------
+
+// Inheritence Example
+
+using System;
+
+//Single Inheritence
+public class SCalculator{
+    public double Addition(double a, double b){
+        return a + b;
+    }
+}
+
+public class SAdvancedCalc : SCalculator{
+    public double Multiply(double a, double b){
+        return a * b;
+    }
+}
+
+// Multilevel Inheritence
+public class MLCalculator{
+    public double Addition(double a, double b){
+        return a + b;
+    }
+}
+
+public class MLFirstChild : MLCalculator{
+    public double Multiply(double a, double b){
+        return a * b;
+    }
+}
+
+public class MLSecondChild : MLFirstChild{
+    public double substract(double a, double b){
+        return a - b;
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        // Single Inheritence
+        SAdvancedCalc result = new SAdvancedCalc();
+        double mult = result.Multiply(5,4);
+        double add = result.Addition(2,3);
+        
+        double[] final = { mult, add };
+        foreach(double finalress in final){
+            Console.WriteLine($"Calcultion : {finalress}");
+        }
+        
+        // Multilevel Inheritence
+        MLSecondChild mlsecond = new MLSecondChild();
+        double mlres = mlsecond.Multiply(2,2);
+        double mlres2 = mlsecond.substract(10,4);
+        
+        MLFirstChild mlfirst = new MLFirstChild();
+        double mlfirstRes = mlfirst.Multiply(2,4);
+        double mlfirstRes2 = mlfirst.Addition(6,5);
+        
+        double[] finalres = { mlres,mlres2,mlfirstRes,mlfirstRes2 };
+        for(int i = 0; i < finalres.Length; i++){
+            Console.WriteLine($"Result : {finalres[i]}");
+        }
+        
+    }
+}
