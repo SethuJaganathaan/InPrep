@@ -1,0 +1,74 @@
+
+// Method Overloading (Compile-time Polymorphism)
+ Same name but different parameters
+ Decided at Compile time 
+
+
+public class MethodOverload{
+    public double add(double a, double b){
+        return a + b;
+    } 
+    
+    public double add(double a, double b, double c){
+        return a + b + c;
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        MethodOverload overload = new MethodOverload();
+        double add1 = overload.add(2,3);
+        double add2 = overload.add(2,3,8);
+        
+        double[] finalresult = { add1, add2 };
+        
+        foreach(double result in finalresult){
+            Console.WriteLine($"Calculation : {result}");
+        }
+    }
+}
+
+-----------------------------------------------------------------------
+
+// Method Overriding (runtime Polymorphism)
+ Same name but different parameters
+ Decided at run time 
+
+ When a child class provides its own implementation of a method that already exists in the parent class, using:
+ virtual (in base class)
+ override (in derived class)
+
+
+using System;
+
+public class Calculation{
+    public virtual double Calc(double a, double b){
+        return a + b;
+    }
+}
+
+public class SecondCalculation : Calculation{
+    public override double Calc(double a, double b){
+        return a * b;
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Calculation result = new Calculation();
+        Calculation secondResult = new SecondCalculation();
+        
+        double first = result.Calc(2,2);
+        double second = secondResult.Calc(4,4);
+        
+        double[] finale = { first, second };
+        
+        for(int i = 0; i < finale.Length; i++){
+            Console.WriteLine($"Result : {finale[i]}");
+        }
+    }
+}
