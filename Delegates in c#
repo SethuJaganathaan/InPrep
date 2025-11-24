@@ -1,0 +1,47 @@
+//Delegates
+ A delegate is a type that can store a reference to a method.
+  Pass methods as parameters
+  Change which method is called at runtime
+
+
+using System;
+
+public delegate int DelCalc(int a, int b);
+
+public class Calculation{
+    public int add(int a, int b){
+        return a + b;
+    }
+    
+    public int multiply(int a, int b){
+        return a * b;
+    }
+    
+    public int substract(int a, int b){
+        return a - b;
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Calculation calcMethod = new Calculation();
+        
+        DelCalc deleg = calcMethod.add;
+        double resultAdd = deleg(2,2);
+        
+        deleg = calcMethod.multiply;
+        double resultMultiply = deleg(4,5);
+        
+        deleg = calcMethod.substract;
+        double resultSubstract = deleg(10,4);
+        
+        double[] finale = { resultAdd, resultMultiply, resultSubstract };
+        
+        for(int i = 0; i < finale.Length; i++){
+            Console.WriteLine($"Result : {finale[i]}");
+        }
+        
+    }
+}
