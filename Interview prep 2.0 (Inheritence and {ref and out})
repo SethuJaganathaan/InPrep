@@ -131,3 +131,81 @@ public class HelloWorld
         }
     }
 }
+
+
+-------------------------------------------------------------------------------------
+
+Values
+ int,float,double,bool,char,enum,
+ struct - Structs behave like value types—they get copied, not shared.
+Reference
+ class,array,string,object,delegate
+ 
+ 
+Class is used to define objjects
+arrays holds the value types
+------------
+Array - Merging(Using LINQ)
+ int[] arr1 = { 1, 2, 3 };
+ int[] arr2 = { 4, 5, 6 };
+ int[] merged = arr1.Concat(arr2).ToArray();
+
+------------
+Array - Merging(Using CopyTo)
+ int[] arr1 = { 10, 20 };
+ int[] arr2 = { 30, 40 };
+ int[] merged = new int[arr1.Length + arr2.Length];
+
+ arr1.CopyTo(merged, 0);
+ arr2.CopyTo(merged, arr1.Length);
+ 
+ 
+-- Bubble Sort
+ for (int i = 0; i < merged.Length - 1; i++)
+ {
+    for (int j = 0; j < merged.Length - 1 - i; j++)
+    {
+        if (merged[j] > merged[j + 1])
+        {
+            // swap
+            int temp = merged[j];
+            merged[j] = merged[j + 1];
+            merged[j + 1] = temp;
+        }
+    }
+ }
+-----------------------------------------------------------------------------------------------
+ 
+var
+ Type based on the value at the compile time and cannot be changed after the compile time
+ Error caught early in the compile time.
+ 
+ var number = 69;
+ var name = "Sanji";
+ 
+dynamic
+ Does not check the type all it cares at the runtime
+ Error occurs only during excution.
+ 
+ dynamic value = 10
+ Console.WriteLine(value.GetType()); // int
+ 
+ value = "Sanji";
+ Console.WriteLine(value.GetType()); // string
+ 
+-----------------------------------------------------------------------------------------------
+
+Constructor
+ It is a special method in class that is automatically called when object is created
+  - Same name as the class name
+  - No return type, not even void
+  - Used to initialize the value
+  
+ Types
+  - Default Constructor
+  - Parameterized Constructor
+  - Static Constructor
+  - Copy Constructor
+  - Private Constructor
+  - Constructor Overloading
+ 
