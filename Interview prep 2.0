@@ -20,8 +20,25 @@ C#
 
 ----------------------------------------------------------------
 
-// Inheritence Example
+//Single Inheritence
+ Class Inherits from a single base class
+ Derived class get all accessible properties/Methods from the base class.
+ A -> b
 
+//Multilevel Inheritence
+ Derived class become base class for another derived class
+ A -> B -> c
+
+//Hierarchical Inheritence
+ It envolves single base class with multiple derived class.
+ A -> b,c,d
+
+//Multiple Inheritence
+ C# does not allow this with classes, only with interfaces
+ refer below code
+ A -> b, C -> b
+
+// Inheritence Example
 using System;
 
 //Single Inheritence
@@ -56,6 +73,25 @@ public class MLSecondChild : MLFirstChild{
     }
 }
 
+// Multiple Inheritence 
+public interface IAdd{
+    double add(double a, double b);
+}
+
+public interface IMultiply{
+    double multiply(double a, double b);
+}
+
+public class FinalCalc : IAdd,IMultiply{
+    public double add(double a, double b){
+        return a + b;
+    }
+    
+    public double multiply(double a, double b){
+        return a * b;
+    }
+}
+
 public class HelloWorld
 {
     public static void Main(string[] args)
@@ -84,5 +120,14 @@ public class HelloWorld
             Console.WriteLine($"Result : {finalres[i]}");
         }
         
+        //Multiple
+        FinalCalc results = new FinalCalc();
+        double aResult = results.add(4,2);
+        double mResult = results.multiply(10,2);
+        
+        double[] finalresult = { aResult, mResult };
+        for(int j = 0; j < finalresult.Length; j++){
+            Console.WriteLine($"Final : {finalresult[j]}");
+        }
     }
 }
