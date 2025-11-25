@@ -1,0 +1,13 @@
+// Garbage Collection
+ Automatic memory management system used to free the application from manually allocating and releasing memory
+ The Garbage Collector (GC) automatically finds objects that are no longer in use and releases their memory
+ - If unused objects stay in memory, your application may crash. GC removes them automatically.
+ ** Garbage Collector (GC) cannot clean unmanaged resources.
+
+
+
+-------------------------------------
+
+// Dispose
+ Dispose() is a method used to release unmanaged resources manually.
+ - Unmanaged resources = things not handled by .NET automatically (file handles, database connections, network streams, etc.)
