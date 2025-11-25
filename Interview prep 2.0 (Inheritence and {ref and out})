@@ -17,6 +17,35 @@ C#
       }
     }
 
+//CLR (Common Language Runtime)
+ Converts Immediate language to Machine language
+
+//CLS (Common Language Specification)
+ CLR is the set of rules that ensures the compatability between all .net c# language
+ C#
+ VB.NET
+ F#
+ public class TestClass{ public int number; } // cross plat int is common in above language
+
+//JIT (Just In Time compiler)
+ Converts immediate language to machine language in runtime
+
+| Term    | Meaning             | Use                                          |
+| ------- | ------------------- | -------------------------------------------- |
+| **CLR** | Runtime environment | Executes IL code, manages memory, GC         |
+| **CLS** | Common rules        | Ensures all .NET languages can work together |
+| **JIT** | Runtime compiler    | Converts IL → Native machine code            |
+
+| Concept     | Analogy                                 |
+| ----------- | --------------------------------------- |
+| **CLR**     | Kitchen that cooks the food             |
+| **IL Code** | Half-cooked food                        |
+| **JIT**     | Chef who finishes cooking when needed   |
+| **CLS**     | Recipe rules that all chefs must follow |
+
+
+//AOT (Ahead of Time)
+ AOT (Ahead-of-Time) means compiling your C# code before runtime into native machine code instead of relying on JIT (Just-in-Time) compilation.
 
 ----------------------------------------------------------------
 
