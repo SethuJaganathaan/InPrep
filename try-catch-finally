@@ -18,6 +18,26 @@
       ✔ even if you use return inside try/catch
     Note - used for logging, disposing the unmanaged resourse
 
+  (throw)
+   It stops the current code execution.
+   Sends an exception to the nearest catch block.
+
+     static void CheckAge(int age)
+     {
+       if (age < 18)
+       {
+         throw new Exception("Age must be 18 or above.");
+       }
+      Console.WriteLine("Access granted!");
+     }
+
+    static void Main()
+    {
+      CheckAge(15);
+    }
+
+-------------------------------------------------------------
+
   * Why it is Used
      Prevent the program from crashing.
      Handle errors safely.
