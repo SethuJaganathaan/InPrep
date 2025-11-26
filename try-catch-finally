@@ -18,3 +18,9 @@
       ✔ even if you use return inside try/catch
     Note - used for logging, disposing the unmanaged resourse
 
+  * Why it is Used
+     Prevent the program from crashing.
+     Handle errors safely.
+     Show user-friendly messages instead of breaking.
+     Always run cleanup code (closing files, releasing resources)
+
