@@ -1,3 +1,5 @@
+ Exception Handling is a technique used to handle runtime errors in a clean and safe way so your program does not crash
+
 // Basic
  - (try,catch,finally) used for exception handling
  - Helps to handle error in your program without crashing
