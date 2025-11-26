@@ -1,0 +1,72 @@
+// Managed Code
+    It runs under the control of CLR(Common Language Runtime)
+      - CLR manages memory allocation
+      - CLR performs Garbage Collection
+      - CLR provides exception handling
+      - CLR checks type safety
+      - CLR provides security
+    Any code written in C#, VB.NET, F# is Managed Code because it runs inside the .NET environment.
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 10;      // Memory managed by CLR
+        Console.WriteLine(number);
+    }
+}
+
+----------------------------------------------------------------------
+
+// Unmanaged Code
+    Unmanaged Code is code that does NOT run under the CLR.
+        C/C++ code
+        Win32 APIs
+        COM components
+        Pointers and manual memory allocation
+    In unmanaged code, you must manually:
+        Allocate memory (malloc)
+        Free memory (free)
+        Handle memory leaks
+        Handle errors manually
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int* p = (int*)malloc(sizeof(int)); // Manual memory allocation
+    *p = 20;
+
+    cout << *p;
+
+    free(p); // Must manually free
+}
+
+----------------------------------------------------------------------
+
+// C# can call unmanaged code (like Win32 API or C++ DLL) using P/Invoke.
+
+using System;
+using System.Runtime.InteropServices;
+
+class Program
+{
+    [DllImport("user32.dll")]
+    public static extern int MessageBox(IntPtr hWnd, string text, string caption, int type);
+
+    static void Main()
+    {
+        MessageBox(IntPtr.Zero, "Hello", "Unmanaged Code", 0);
+    }
+}
+
+
+*****
+    MessageBox is unmanaged (native Windows function)
+    C# uses DllImport to call it
+    This code runs unmanaged code outside CLR.
+
+
