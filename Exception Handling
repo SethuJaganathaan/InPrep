@@ -1,4 +1,14 @@
- Exception Handling is a technique used to handle runtime errors in a clean and safe way so your program does not crash
+// Exception Handling 
+   It is a technique used to handle runtime errors in a clean and safe way so your program does not crash
+
+   Why is Exception Handling Used?
+     - Prevent program from crashing
+     - Show meaningful error message
+     - Handle unexpected situation saftly
+     - Continue the execution of program even after the error
+     - Log error for debugging
+     - Cleanup the resourse
+------------------------------------------------------------------------
 
 // Basic
  - (try,catch,finally) used for exception handling
