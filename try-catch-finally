@@ -1,0 +1,20 @@
+// Basic
+ - (try,catch,finally) used for exception handling
+ - Helps to handle error in your program without crashing
+
+// try,catch,finally
+ (try)
+    Block contains the logic of the code, If it contains error it will
+    pass to catch block
+
+ (catch)
+    It will execute only when the try block contain the error
+
+ (finally)
+    This block runs always, no matter what.
+    It runs when:
+      ✔ no error
+      ✔ error happened
+      ✔ even if you use return inside try/catch
+    Note - used for logging, disposing the unmanaged resourse
+
