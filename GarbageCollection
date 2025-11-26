@@ -10,4 +10,35 @@
 
 // Dispose
  Dispose() is a method used to release unmanaged resources manually.
- - Unmanaged resources = things not handled by .NET automatically (file handles, database connections, network streams, etc.)
+ Why we using
+ - Because GC cannot clear the unmanaged resourse.
+  * Unmanaged resources = things not handled by .NET automatically (file handles, database connections, network streams, etc.)
+
+// Manual Dispose
+ public class Program
+ {
+    public static void Main(string[] args)
+    {
+        FileStream fs = new FileStream("sample.txt", FileMode.OpenOrCreate);
+        
+        StreamWriter sw = new StreamWriter(fs);
+        sw.WriteLine("Halo Amigos !");
+        
+        fs.Dispose();
+        sw.Dispose();
+    }
+ }
+
+// Automatic Dispose
+ - using keyword used to automatically dispose the unmanaged resourse
+
+ public class Program
+ {
+    public static void Main(string[] args)
+    {
+        using(FileStream fs = new FileStream("sample.txt", FileMode.OpenOrCreate));
+        using(StreamWriter sw = new StreamWriter(fs)){
+            sw.WriteLine("Halo!");
+        }
+    }
+ }
