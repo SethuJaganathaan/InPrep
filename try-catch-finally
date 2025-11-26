@@ -24,3 +24,5 @@
      Show user-friendly messages instead of breaking.
      Always run cleanup code (closing files, releasing resources)
 
+// Important note
+   - Many number of catch block can be used, but for try and finally only one is used
