@@ -41,3 +41,11 @@ public class Program
     - A Generic Collection is a type of collection in C# that can store a specific data type defined at the time of creating the collection
         - List<int> number = new List<int>();
         - List<string> letter = new List<string>()
+
+    List<T>
+    Dictionary<TKey, TValue>
+    Stack<T>
+    Queue<T>
+    HashSet<T>
+    SortedList<TKey, TValue>
+    LinkedList<T>
