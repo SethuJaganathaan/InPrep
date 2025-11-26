@@ -198,7 +198,7 @@ class Program
     #region How to count the occurrence of each character in a string
     static void Mainy(string[] args)
     {
-        Console.WriteLine("Enter teh string");
+        Console.WriteLine("Enter the string");
         string input = Console.ReadLine();
 
         Dictionary<char, int> charcount = new Dictionary<char, int>();
