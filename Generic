@@ -1,0 +1,36 @@
+// Generic
+    It allow you to create classes,methods,delegates and collections in placeholders for the data type
+    ** You define a type T, and later you can use that class or method with any data type, without rewriting the code
+
+// Example code
+using System;
+
+public class Genr<T>{
+    public T data;
+    
+    public Genr(T value){
+        data = value;
+    }
+    
+    public T Display(){
+        //Console.WriteLine("Result : " + data);
+        return data;
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Genr<int> obj = new Genr<int>(100);
+        int results = obj.Display();
+        Genr<string> obj2 = new Genr<string>("Halo!");
+        var result = obj2.Display();
+        
+        var finale =  new object[] { results, result }; // (why object means i have int, var (results, result) so object accepts both)
+        
+        for(int i = 0; i < finale.Length; i++){
+            Console.WriteLine($"Result : {finale[i]}");
+        }
+    }
+}
