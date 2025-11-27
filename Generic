@@ -49,3 +49,37 @@ public class Program
     HashSet<T>
     SortedList<TKey, TValue>
     LinkedList<T>
+
+// Queue
+    - First in First out (FIFO)
+        - Enqueue() - To add data in Queue.
+        - Dequeue() - To remove data in Queue.
+        - Peek() - to see the first data in Queue.
+        - Iterate - Loop and display the data.
+
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Queue<string> Que = new Queue<string>();
+        
+        Que.Enqueue("Luffy");
+        Que.Enqueue("Sanji");
+        Que.Enqueue("Zoro");
+        
+        foreach(string result in Que){
+            Console.WriteLine(result);
+        }
+        
+        Console.WriteLine(Que.Dequeue() + "Finished one");
+        
+        foreach(string result in Que){
+            Console.WriteLine(result);
+        }
+        
+        Console.WriteLine("Peek the front value : " + Que.Peek());
+    }
+}
