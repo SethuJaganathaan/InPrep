@@ -49,7 +49,7 @@ public class Program
     HashSet<T>
     SortedList<TKey, TValue>
     LinkedList<T>
-
+----------------------------------------------------------------------------------------
 // Queue
     - First in First out (FIFO)
         - Enqueue() - To add data in Queue.
@@ -83,8 +83,7 @@ public class Program
         Console.WriteLine("Peek the front value : " + Que.Peek());
     }
 }
-
-
+----------------------------------------------------------------------------------
 // Stack
     - Last in First Out (LIFO)
         - Push() - add data in stack.
@@ -117,5 +116,46 @@ public class Program
         
         Console.WriteLine("Last Data : " + names.Peek());
         
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+// HashSet
+    - Automatically removes duplicate entries.
+    - Unordered List
+
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var hashResult = new HashSet<string>();
+        
+        hashResult.Add("Zoro");
+        hashResult.Add("Luffy");
+        hashResult.Add("Sanji");
+        
+        foreach(var result in hashResult){
+            Console.Write(result + " ");
+        }
+        
+        bool dup = hashResult.Add("Zoro");
+        
+        if(!dup){
+            Console.WriteLine("HashSet doesn't allow duplicate, If you want duplicate use List");
+            Console.WriteLine("HashSet gives in unordered list");
+        }
+        
+        var orderList = new List<string>(hashResult);
+        orderList.Sort();
+
+        
+        Console.WriteLine("Ordered HashSet");
+        foreach(var finale in orderList){
+            Console.WriteLine(finale);
+        }
     }
 }
