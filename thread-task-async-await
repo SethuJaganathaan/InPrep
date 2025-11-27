@@ -1,1 +1,14 @@
+| Feature            | Thread                    | Task                          |
+| ------------------ | ------------------------- | ----------------------------- |
+| Level              | Low-level                 | High-level                    |
+| Code complexity    | Harder                    | Easier                        |
+| Uses               | Manual parallel execution | Async/await, background tasks |
+| Performance        | Lower                     | Better optimized              |
+| Exception handling | Hard                      | Easy                          |
+| Recommended        | ❌ Old                     | ✅ Modern way                  |
+
+
+// Thread
+    Smallest unit of execution in the program.
+    Thread executes code independendly to do a multiple things at a same time.
 
