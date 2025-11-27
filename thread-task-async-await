@@ -12,3 +12,60 @@
     Smallest unit of execution in the program.
     Thread executes code independendly to do a multiple things at a same time.
 
+
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
+public class Program
+{
+    public class Works<T>{
+        public T data;
+        
+        public Works(T value){
+            data = value;
+        }
+        
+        public void Display(){
+            for(int i = 0; i < 4; i++){
+                Console.WriteLine("Result : " + data);
+                Thread.Sleep(100);
+            }
+        } 
+        
+        public void NumberDis(){
+            for(int i = 0; i < 5; i++){
+                Console.WriteLine(i);
+                Thread.Sleep(1000);
+            }
+        }
+        
+        public void ShowChars(){
+            string input = data.ToString();
+            
+            foreach(char c in input){
+                Console.WriteLine(c + " ");
+                Thread.Sleep(500);
+            }
+        }
+    }
+    
+    public static void Main(string[] args)
+    {
+        Works<int> number = new Works<int>(100);
+        Works<string> names = new Works<string>("Sanji");
+
+        Thread t1 = new Thread(number.Display);
+        Thread t2 = new Thread(names.Display);
+        Thread t3 = new Thread(names.NumberDis);
+        Thread t4 = new Thread(names.ShowChars);
+        
+        t1.Start();
+        t2.Start();
+        t3.Start();
+        t4.Start();
+        
+    }
+}
+
+-------------------------------------------------------------------------------------------------
