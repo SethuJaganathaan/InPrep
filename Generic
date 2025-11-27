@@ -83,3 +83,39 @@ public class Program
         Console.WriteLine("Peek the front value : " + Que.Peek());
     }
 }
+
+
+// Stack
+    - Last in First Out (LIFO)
+        - Push() - add data in stack.
+        - Pop() - remove data in stack.
+        - Peek() - see the last data in stack.
+        - Iterate - Loop the  stack.
+
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var names = new Stack<string>();
+        
+        names.Push("Luffy");
+        names.Push("Sanji");
+        names.Push("Zoro");
+        
+        foreach(var result in names){
+            Console.WriteLine(result);
+        }
+        
+        Console.WriteLine("Last data removed : " + names.Pop());
+        
+        foreach(var result in names){
+            Console.WriteLine(result);
+        }
+        
+        Console.WriteLine("Last Data : " + names.Peek());
+        
+    }
+}
