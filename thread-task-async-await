@@ -64,8 +64,19 @@ public class Program
         t2.Start();
         t3.Start();
         t4.Start();
-        
     }
 }
+
+------------------------------------------------------------------------------
+
+// async
+    async is a keyword used to mark a method as asynchronous
+        - This method will run some work in bacground.
+        - This method use await inside it.
+// await
+    await is the keyword that pauses the async method until the awaited task is completed, without blocking the thread..
+        - The application is still responsive.
+        - The thread is free to do other work.
+        - No freezing (especially useful in UI apps).
 
 -------------------------------------------------------------------------------------------------
