@@ -79,4 +79,50 @@ public class Program
         - The thread is free to do other work.
         - No freezing (especially useful in UI apps).
 
+using System;
+using System.Threading.Tasks;
+
+public class Example{
+    
+    public async Task first(){
+        Console.WriteLine("1 - Started");
+        await Task.Delay(1000);
+        Console.WriteLine("1 - Ended");
+    }
+    
+    public async Task second(){
+        Console.WriteLine("2 - Started");
+        await Task.Delay(2000);
+        Console.WriteLine("2 - Ended");
+    }
+    
+    public async Task third(){
+        Console.WriteLine("3 - Started");
+        Console.WriteLine("3 - Ended");
+    }
+}
+
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        Example result = new Example();
+        
+        Console.WriteLine("Starting all method at same time");
+        
+        await Task.WhenAll(
+            result.first(),
+            result.second(),
+            result.third()
+            );
+            
+        Console.WriteLine("All method ended");
+    }
+}
+
+// Mistakes made
+    main class should also be in async/await
+    instead of commas i used semi colon (line 114)
+
+
 -------------------------------------------------------------------------------------------------
