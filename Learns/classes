@@ -1,0 +1,9 @@
+| Type of Class  | Can Instantiate? | Purpose                              |
+| -------------- | ---------------- | ------------------------------------ |
+| Normal Class   | ✔ Yes            | Regular implementation               |
+| Static Class   | ❌ No             | Utility/helper functions             |
+| Abstract Class | ❌ No             | Base class with abstract methods     |
+| Sealed Class   | ✔ Yes            | Prevent inheritance                  |
+| Partial Class  | ✔ Yes            | Split class into multiple files      |
+| Nested Class   | ✔ Yes            | Group helper classes inside a parent |
+| Generic Class  | ✔ Yes            | Type-safe reusable classes           |
