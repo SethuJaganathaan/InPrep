@@ -7,3 +7,31 @@
 | Partial Class  | ✔ Yes            | Split class into multiple files      |
 | Nested Class   | ✔ Yes            | Group helper classes inside a parent |
 | Generic Class  | ✔ Yes            | Type-safe reusable classes           |
+
+
+// Nested class
+    public class Outer
+{
+    public class Inner
+    {
+        public void Display()
+        {
+            Console.WriteLine("Inside Inner Class");
+        }
+    }
+}
+
+Outer.Inner obj = new Outer.Inner();
+obj.Display();
+
+----------------------------------------------------------------------------
+
+// Sealed class
+    A sealed class prevents inheritance.
+Used 
+  You want to protect the logic inside a class.
+  You want to increase performance (sealed classes are optimized by CLR).
+  You want to stop further overriding.
+
+Real-life use case:
+System.String class in .NET is sealed.
