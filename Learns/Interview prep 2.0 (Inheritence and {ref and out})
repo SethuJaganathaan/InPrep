@@ -17,6 +17,27 @@ C#
       }
     }
 
+✔ The variable does not need to be initialized
+✔ Used when a method must return a value using parameters
+✔ Method must assign a value before returning.
+
+class Program
+{
+    static void Main()
+    {
+        int number;
+        GetNumber(out number);
+        Console.WriteLine("Output: " + number);
+    }
+
+    static void GetNumber(out int value)
+    {
+        value = 100; // must assign
+    }
+}
+
+---------------------------------------------------------------------------------
+
 //CLR (Common Language Runtime)
  Converts Immediate language to Machine language
 
