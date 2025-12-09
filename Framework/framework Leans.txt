@@ -4,3 +4,30 @@
         Web application
         Web Services
     - It's mainly uses programing languages - C#, VB.NET, F#
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+How does .NET Framework works
+    CLR(Common Language Runtime) - executes codes, Handle memory, Exception Handling
+    BCL(Base Class Library) - Readymade classes like file I/O, Database access, Networking.
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello .NET Framework!");
+    }
+}
+
+simple code
+    Code is converted to IL(Immediate Language)
+    CLR Converts immediate Language to Machine code and runs it.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Where .NET Used Today
+    - Legacy enterprise application
+    - Window Only software
