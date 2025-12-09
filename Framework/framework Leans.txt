@@ -1,1 +1,6 @@
-Learning
+.NET Framework
+    - It provides the runtime environment and set of libraries that developer use to build a application for windows.
+        Desktop app
+        Web application
+        Web Services
+    - It's mainly uses programing languages - C#, VB.NET, F#
