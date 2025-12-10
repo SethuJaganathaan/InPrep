@@ -1,1 +1,18 @@
+ViewState
+    - It is the mechanism in ASP.NET WEB FORM used to store the state of web controls between postbacks
+    - Since HTTP is stateless, everytime the page postbacked to server means
+        Controls value is normally resets.
+    - Viewstate used to preserve that value even after the postback
+
+--------------------------------------------------------------------------------------------------------------
+
+Why it is Used
+
+| Purpose                    | Explanation                                               |
+| -------------------------- | --------------------------------------------------------- |
+| Maintain state             | Keeps control values during postbacks                     |
+| No server resources needed | Stored on the client side (in the page as a hidden field) |
+| Automatic                  | Enables state management without extra code               |
+
+--------------------------------------------------------------------------------------------------------------
 
