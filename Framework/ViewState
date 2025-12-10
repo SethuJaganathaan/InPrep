@@ -6,7 +6,7 @@ ViewState
 
 --------------------------------------------------------------------------------------------------------------
 
-Why it is Used
+Why ViewState is Used
 
 | Purpose                    | Explanation                                               |
 | -------------------------- | --------------------------------------------------------- |
@@ -15,4 +15,28 @@ Why it is Used
 | Automatic                  | Enables state management without extra code               |
 
 --------------------------------------------------------------------------------------------------------------
+
+Where ViewState is used
+    - Webform pages in ASP.NET Framework
+    - Controls like Textbox, Dropdownlist, Checkbox, etx.,
+    - To remember user input after postbacks.
+    - To store page specific data within the same page cycle.
+
+--------------------------------------------------------------------------------------------------------------
+
+Limitations
+
+| Issue                       | Explanation                                     |
+| --------------------------- | ----------------------------------------------- |
+| Increases page size         | Stored in HTML hidden field, can slow page load |
+| Only works within same page | Not shared across pages                         |
+| Security concerns           | Base64 encoded → should be encrypted/hashed     |
+
+-------------------------------------------------------------------------------------------------------------
+
+EnableViewState="false"
+ it can be disabled and enabled
+
+-------------------------------------------------------------------------------------------------------------
+
 
