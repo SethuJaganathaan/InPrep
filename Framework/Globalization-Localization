@@ -7,4 +7,43 @@ Globalization
         * Different Cultural convention
         * Unicode support.
 
+
+Why Globalization is used
+    - To make application unversal, so it can run correctly for user anywhere in the world.
+
+Where is it used?
+    - In applications meant for global markets — websites, mobile apps, enterprise software, etc.
+
+Example
+
+// France
+    CultureInfo ci = new CultureInfo("fr-FR");
+    double amount = 12345.67;
+    Console.WriteLine(amount.ToString("C", ci)); 
+
+// US
+    CultureInfo ci = new CultureInfo("en-US");
+    Console.WriteLine(amount.ToString("C", ci));
+
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+Localization
+        It is the process of translating resources into specific language for different regions
+
+Why is it used?
+    To give users a local user experience in their own language/cultural style.
+
+Where is it used?
+    Multilingual websites, Windows apps, mobile applications, etc.
+
+It uses Resources.resx 
+
+| Feature       | Globalization                      | Localization                                |
+| ------------- | ---------------------------------- | ------------------------------------------- |
+| Purpose       | Make application culture-aware     | Make content language-specific              |
+| Focus         | Data formats, layout, architecture | UI text, images, culture-specific resources |
+| When applied? | Development stage                  | Deployment/content stage                    |
+| Result        | Multi-country capability           | Native language experience                  |
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
