@@ -1,0 +1,10 @@
+Globalization
+    - It a process of designing and developing the application so it can support different language, region without code change
+    - Making application ready for International users
+        * Date and Time foramt
+        * Number format
+        * Currency format
+        * Different Cultural convention
+        * Unicode support.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
