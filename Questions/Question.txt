@@ -1,0 +1,85 @@
+C#
+1. ref and out keyword - (DONE)
+2. value and reference - (DONE)
+3. cont and readonly  - (DONE)
+4. var and dynamic - (DONE)
+5. contrutor and types - (DONE)
+6. abstract and interface - (DONE)
+7. inheritance - (DONE)
+8. method overloading and overriding - (DONE)
+9. delegates - (DONE)
+10. clr, cls, jit - (DONE)
+11. aot(ahead on time) - (DONE)
+12. garbage collection - (LATER)
+13. dispose and finally - (DONE)
+14. exception handling - (DONE)
+15. manage code and unmanage code - (DONE)
+16. Generics - (PARTIAL)
+17. Dictionary and Hashset - (DONE)
+18. thread , task - (DONE)
+19. async and await - (DONE)
+20. types of class - (DONE)
+
+-----------------------------
+.Net FrameworK
+1. what is .Net FrameworK - (DONE)
+2. View state - (DONE)
+3. Globalisation and localization - (DONE)
+4. event types - 
+5. cookies and its types
+6. aspx means
+7. web application life cycle 
+8. global.asax
+
+----------------------------------
+.Net Core
+
+1. Diff .Net FrameworK & .Net Core
+2. middileware
+3. Routing
+4. Dependency injection
+5. CORS
+6. Rest Api
+7. Rest and Restful Api
+8. Adavantage over SOAP and Rest
+9. how to secure Api- Jwt
+10. Entity Framework
+11. Approaches (code first and db first)
+12. Linq
+13. Optimise entity framework 
+14. Dependency injection cycle and implement
+15. IEnumerable, Iquerryable, Icollections, IList
+
+---------------------------------------------
+mvc
+
+1. what is mvc architecture
+2. viewbag, viewdata, tempdata
+3. Routing
+4. Partial view
+5. How dependency injection injected
+
+-------------------------------------------------
+sql
+
+1. Triggers
+2. views
+3. how to optimise querry efficiency
+4. temp table and global temp table
+5. views
+6. constraints
+7. Transaction
+8. cte
+9. function vs stored procedure
+10. sql injection
+11. indexes 
+12. stuff and replace
+13. rand and dense rand
+14. partition
+
+---------------------------
+
+Null reference
+object reference
+typecast exception
+arthimatic exception
