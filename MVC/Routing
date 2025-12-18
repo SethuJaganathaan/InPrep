@@ -1,0 +1,16 @@
+// Routing
+    It is a mechanism that maps the url request to the controller actions
+      - When useer enter the url, MVC routing decides which controller and action will handle the request.
+      - Withot routing, MVC Framework wouldnt know which code to execute for the given url.
+
+Key concept: A route defines a pattern for URLs and tells MVC which controller/action to call.
+
+// Why do we need Routing?
+Create friendly URLs
+	Example: /Products/Details/5 instead of /Products.aspx?id=5
+Map URLs to controllers/actions
+	The same action can have multiple URLs or patterns.
+Support parameterized URLs
+	You can pass parameters in the URL itself (like id, category, etc.)
+Enable SEO-friendly URLs
+	Search engines prefer readable URLs.
