@@ -1,0 +1,45 @@
+What is MVC Architecturre
+    MVC(Model-View-Controller) is the design pattern used in web development to organize code
+    It divides the application into three interconnected components
+      - Model
+      - View
+      - Controller
+
+// Model
+    Manage the data and buisness logic of the application
+    Interact with the database(CRUD)
+    Enforces rules and Validations
+Note - Model does not know how data displayed
+
+// View
+    Handles the User Interace(UI)
+    Display data to the user
+    Recives Data from the user (through forms)
+Note - View does not contains the buisness logic (Conatains only presentation logic)
+
+// Controller
+    Act as Middleman between Model and View
+    Recieves the user HTTP request
+    Calls the appropriate model and view to display the data
+Note - Controller controls the flow of the applications
+
+----------------------------------------------------------------------------------------------- MVC FLOW EXAMPLE --------------------------------------------------------------------------------------------------------------
+
+MVC Request Flow (Web Example)
+ - User sends a request (e.g., /login)
+ - Controller receives the request
+ - Controller interacts with the Model to fetch or update data
+ - Controller sends data to the View
+ - View renders the response (HTML/JSON)
+ - Response is returned to the user
+
+Why Use MVC?
+    Advantages
+      ✅ Separation of concerns
+      ✅ Easier maintenance and scalability
+      ✅ Supports parallel development (frontend & backend)
+      ✅ Improved testability
+
+    Disadvantages
+      ❌ Can feel complex for small projects
+      ❌ Extra files and boilerplate
