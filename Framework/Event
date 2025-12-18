@@ -1,1 +1,50 @@
+// EVENT
+    Event is the mechanism that alllow class(Publisher) to notify the other class(Subscriber) if something happens.
 
+What is Event
+    It is a special kind of delegates used for notification
+
+Why Event used
+    - Improve code maintainablity
+        Logic is separated and reusable
+    - Handle UI Interaction
+        Button clicks, key press and mouse movement
+
+Where Event is Used
+    - Windows forms
+    - ASP.NET MVC
+    - Console Application
+    - Custom buisness logic
+    - WPF
+Examples: Button Click, Text Changed, Page Load, File Download Completed
+
+---------------------------------------------------------------------------------------------------- EXAMPLE CODE --------------------------------------------------------------------------------------------------------------
+
+using System;
+
+public class Button{
+    public event Action Click;
+    
+    public void press(){
+        Console.WriteLine("Button Triggered by Event");
+        Click.Invoke();
+    }
+}
+
+public class ButtonHandler{
+    public void Showmessage(){
+        Console.WriteLine("Button Handled");
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Button btn = new Button();
+        ButtonHandler btnHandle = new ButtonHandler();
+        
+        btn.Click += btnHandle.Showmessage;
+        btn.press();
+    }
+}
