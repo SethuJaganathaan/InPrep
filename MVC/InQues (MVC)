@@ -1,0 +1,44 @@
+1. MVC Request Life cycle?
+    User send the request (HTTP Request)
+    Recieved by the Controller and It interact with Model 
+    Fetch the data from the model
+    Controller sends that data to view
+    View renders the Data
+
+2. Can View access Model directly?
+    No, Ideally view should not directly access the model
+    The Controller acts as an intermediary to maintain separation of concerns.
+
+3. What happens if business logic is written in View?
+    Breaks the separation of concern
+    Makes application harder to maintain
+    Reduce testablity
+
+4. Is MVC suitable for small applications?
+    MVC can be overkill for small apps due to extra structure, but it is excellent for medium to large applications.
+
+5. What is “Fat Controller” in MVC?
+    A Fat Controller is one that contains too much business logic.
+    Best practice is to move logic into Models or Services.
+
+--------------------------------------------------------------------------------------------------------- Advanced -----------------------------------------------------------------------------------------------------------
+
+6. Difference between MVC and MVVM?
+| MVC                      | MVVM                     |
+| ------------------------ | ------------------------ |
+| Controller handles input | ViewModel handles state  |
+| View is passive          | View is data-bound       |
+| Less suited for SPA      | Ideal for SPA frameworks |
+
+7. What is MVC in REST APIs?
+    Controller handles HTTPS endpoints
+    Model handles the buisness logic
+    View usually json/xml instead of html
+
+8. How does MVC improve testability?
+    Models can be tested independenly
+    Controller can be used mock modela
+    Views are simple and require minimal testing
+
+9. Where should validation logic go?
+    Validation should be placed in the Model or Service layer, not in the View.
