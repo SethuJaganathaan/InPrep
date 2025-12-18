@@ -1,0 +1,119 @@
+// ViewBag, ViewData, TempData
+   - Used to pass data from Controller to View
+   - They are mainly differ in
+        Lifetime
+        scope
+        Usage
+-----------------------------------------------------------------------------------------
+// ViewData
+    - It is Dictionary object
+    - Stores data in key value
+    - Type casting is required
+
+Where it is used
+    - Used to pass Data from controller to View
+    - Works only for current request
+Why
+Useful when you want to send small pieces of data to a view
+
+public ActionResult Index()
+{
+    ViewData["Message"] = "Hello from ViewData";
+    return View();
+}
+<h2>@ViewData["Message"]</h2>
+
+Limitations
+  Data is lost after the request ends
+  Requires type casting if not string
+-----------------------------------------------------------------------------------------
+
+// ViewBag
+🔹 What
+      ViewBag is a dynamic object
+      Internally uses ViewData
+      No type casting required
+
+🔹 Where
+      Used to pass data from Controller to View
+      Available only during the current request
+
+    Why
+      Cleaner and easier syntax than ViewData
+
+public ActionResult Index()
+{
+    ViewBag.Message = "Hello from ViewBag";
+    return View();
+}
+
+<h2>@ViewBag.Message</h2>
+
+Limitations
+  Data is lost after request completes
+  No compile-time checking (can cause runtime errors)
+
+------------------------------------------------------------------------------------------
+
+// TempData
+    What
+      TempData stores data temporarily
+      Uses Session internally
+      Works across multiple requests
+
+🔹 Where
+      Used when redirecting from one action to another
+      Controller ➜ Controller ➜ View
+
+🔹 Why
+      Ideal for redirect scenarios (e.g., success messages)
+
+public ActionResult Save()
+{
+    TempData["Success"] = "Data saved successfully";
+    return RedirectToAction("Result");
+}
+
+public ActionResult Result()
+{
+    return View();
+}
+
+<h2>@TempData["Success"]</h2>
+
+---------------------------------------------------------------------------------------------------Tempdata example---------------------------------------------------------------------------------------------------------
+
+public ActionResult Step1()
+{
+    TempData["Message"] = "Message will be kept";
+    return RedirectToAction("Step2");
+}
+
+public ActionResult Step2()
+{
+    TempData.Keep(); // Keeps all TempData
+    return RedirectToAction("Step3");
+}
+
+public ActionResult Step3()
+{
+    return View();
+}
+
+⚠️ Note - Tempdata["Message"] value in Step1 action and redirect to Step2 value is read and value will get deleted and can't be used in Step3
+          to use in Step3 we use TempDaata.Keep() in step2 and it will be used in Step3,
+          If we didn't used keep() in Step2 means Step3 will not get the Data. It will get as null.
+
+⚠️ Important
+      Data is removed after it is read once
+      Can use TempData.Keep() to retain it
+
+---------------------------------------------------------------------------------------------
+
+| Feature               | ViewData        | ViewBag         | TempData           |
+| --------------------- | --------------- | --------------- | ------------------ |
+| Type                  | Dictionary      | Dynamic         | Dictionary         |
+| Requires Type Casting | Yes             | No              | Yes                |
+| Lifetime              | Current Request | Current Request | Until Next Request |
+| Uses Session          | ❌               | ❌               | ✅              |
+| Best For              | Small data      | Clean syntax    | Redirect messages  |
