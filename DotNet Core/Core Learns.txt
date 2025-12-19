@@ -1,1 +1,57 @@
-Learning
+1. What is .NET Framework?
+      .NET Framework is the original Microsoft platform for building applications.
+
+What it is
+    Runs only on Windows
+  Used mainly for:
+    Windows Desktop apps (WinForms, WPF)
+    ASP.NET (older web apps)
+    Installed as part of Windows
+  Key points
+    Windows-only
+    Mature but no longer actively evolving
+    Tightly coupled with the OS
+
+2. What is .NET Core?
+      .NET Core is a modern, redesigned version of .NET.
+
+What it is
+    Cross-platform (Windows, Linux, macOS)
+    Open-source
+    High performance
+    Lightweight and modular
+  Key points
+    Runs anywhere
+    Actively developed
+    Ideal for modern apps, cloud, microservices
+🔔 Note: From .NET 5 onward, Microsoft unified everything as just “.NET”.
+
+| Problem with .NET Framework | How .NET Core solved it |
+| --------------------------- | ----------------------- |
+| Windows-only                | Cross-platform          |
+| Heavy and slow              | Lightweight & fast      |
+| Not cloud-friendly          | Cloud & container ready |
+| Closed source               | Open source             |
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+4. Where to use each?
+    Use .NET Framework when:
+      Maintaining legacy Windows applications
+      Using old libraries that don’t support .NET Core
+      Building WinForms/WPF apps for older systems
+    Use .NET Core / .NET (5+) when:
+      Building new applications
+      Web APIs, microservices
+      Cloud, Docker, Kubernetes
+      Cross-platform development
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+| Feature       | .NET Framework   | .NET Core         |
+| ------------- | ---------------- | ----------------- |
+| Platform      | Windows only     | Cross-platform    |
+| Performance   | Moderate         | High              |
+| Open source   | ❌ No             | ✅ Yes             |
+| Cloud support | ❌ Limited        | ✅ Excellent       |
+| Future        | Maintenance mode | Actively evolving |
