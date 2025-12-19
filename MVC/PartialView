@@ -1,0 +1,30 @@
+// Partial View
+    It is reusable piece of view that can be rendered inside other views
+      - Contains HTML + rAZOR
+      - Does not have full layout (_layout.cshtml)
+      - meant to be used across multiple pages
+
+Why do we use partial view
+    - Reusable
+        Use the same UI in multiple places (header, footer, menu, etc.)
+    - Clean code
+        Break large views into smaller, manageable pieces
+    - Maintainability
+        Change once → reflects everywhere
+    - Dynamic updates (AJAX)
+        Load or update only part of the page without refreshing the whole page
+
+-----------------------------------------------------------------------------------Example code--------------------------------------------------------------------------------------------------
+
+Views/Shared/_EmployeeCard.cshtml
+
+@model Employee
+
+<div class="card">
+    <h3>@Model.Name</h3>
+    <p>Department: @Model.Department</p>
+</div>
+--
+@model Employee
+<h2>Employee Details</h2>
+@Html.Partial("_EmployeeCard", Model)
