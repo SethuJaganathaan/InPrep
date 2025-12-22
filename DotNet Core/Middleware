@@ -1,0 +1,61 @@
+// Middleware
+    - Handles HTTP request and response
+    - Sits between request coming out and reponse going out
+    - Can inspect, modify and stops the response.
+
+Request → Middleware 1 → Middleware 2 → Middleware 3 → Response
+
+Each middleware pass the request to the another or stop the request and return the response.
+
+--------------------------------------------------------------------------------------------------------------
+
+Why do we need Middleware?
+    Middleware is used to handle cross-cutting concerns, such as:
+    Authentication & Authorization
+    Logging
+    Exception handling
+    Caching
+    Session management
+    Routing
+    HTTPS redirection
+Instead of writing this logic in every controller, middleware handles it once for all requests
+
+---------------------------------------------------------------------------------------------------------------
+
+Where middleware is used
+It is configured in Program.cs (older startup.cs)
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+
+------------------------------------------------------------------------------------------------ CUSTOM MIDDLEWARE EXAMPLE ---------------------------------------------------------------------------------------------------
+
+public class SimpleMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public SimpleMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task Invoke(HttpContext context)
+    {
+        // Before next middleware
+        Console.WriteLine("Request coming in");
+
+        await _next(context); // Pass to next middleware
+
+        // After next middleware
+        Console.WriteLine("Response going out");
+    }
+}
+
+In program.cs - ( app.UseMiddleware<SimpleMiddleware>(); )
