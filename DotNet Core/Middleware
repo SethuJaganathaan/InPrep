@@ -59,3 +59,75 @@ public class SimpleMiddleware
 }
 
 In program.cs - ( app.UseMiddleware<SimpleMiddleware>(); )
+
+------------------------------------------------------------------------------------ ( Use, App, and Map ) ------------------------------------------------------------------------------------------------------------------
+
+Use - Adds middleware to the pipeline
+      Call the next middleware
+      Can do work before and after the next middleware
+
+app.Use(async (context, next) =>
+{
+    // Before next
+    Console.WriteLine("Before");
+    await next();   // Pass request to next middleware
+    // After next
+    Console.WriteLine("After");
+});
+
+When to use
+✔ Logging
+✔ Authentication
+✔ Exception handling
+✔ Any middleware that should continue the pipeline
+-----------------------------------------------------------------------
+App - Adds terminal middleware
+      Does not call the next middleware
+      Request stops here.
+
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Hello from Run");
+});
+
+any middleware after Run does not execute
+
+When to use
+✔ Return a final response
+✔ Simple APIs
+✔ Health check endpoints
+------------------------------------------------------------------------
+
+Map - Create a separate middleware pipeline
+      Execute only for specific path
+
+app.Map("/admin", adminApp =>
+{
+    adminApp.Run(async context =>
+    {
+        await context.Response.WriteAsync("Admin Area");
+    });
+});
+
+Conditional branching - usewHEN
+
+app.MapWhen(
+    context => context.Request.Query.ContainsKey("debug"),
+    debugApp =>
+    {
+        debugApp.Run(async context =>
+        {
+            await context.Response.WriteAsync("Debug Mode");
+        });
+    });
+
+Runs only when ?debug=true is present.
+
+--------------------------------------------------------------------------
+
+| Method | Calls Next? | Stops Pipeline? | Used For              |
+| ------ | ----------- | --------------- | --------------------- |
+| `Use`  | ✅ Yes       | ❌ No            | Common logic          |
+| `Run`  | ❌ No        | ✅ Yes           | Final response        |
+| `Map`  | Depends     | Depends         | Route-based branching |
+
