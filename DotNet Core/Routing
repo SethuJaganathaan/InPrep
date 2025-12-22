@@ -1,0 +1,8 @@
+It is mechanism that maps the incoming url (HTTP Request) to the code that should handle it
+
+2️⃣ Why do we need Routing?
+      Routing is needed because:
+      Connect URLs to Code
+Without routing, ASP.NET Core wouldn’t know:
+Which method should handle /products/5
+Or what to do when /login is requested
