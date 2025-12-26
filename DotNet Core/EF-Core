@@ -1,0 +1,46 @@
+Joins
+    var users = context.Users
+                   .Include(u => u.Orders)
+                   .ToList();
+
+Linq converted in SQL
+    SELECT * 
+    FROM Users u
+    LEFT JOIN Orders o ON u.Id = o.UserId
+
+Manual Join in EF Linq
+    var result = from u in context.Users
+             join o in context.Orders on u.Id equals o.UserId
+             select new { u.Name, o.Total };
+
+----------------------------------------------------------------------------------- First() and FirstOrDefault() ----------------------------------------------------------------------------------------------
+
+First()
+  var user = context.Users.First(u => u.Id == 10);
+
+Note 
+❌ Throws Exception if no record found
+    only used when you know data exist
+
+FirstOrDefault()
+  ✔ Returns null if not found
+  ✔ Safe for APIs
+
+--------------------------------------------------------------------------------------- AsNoTracking() -------------------------------------------------------------------------------------------------------
+
+EF Core tracks entities to detect changes.
+
+var users = context.Users
+                   .AsNoTracking()
+                   .ToList();
+
+What changes?
+  No tracking
+  Faster
+  Less memory
+📌 Perfect for:
+  GET APIs
+  Reports
+  Read-only data
+
+❌ Don’t use AsNoTracking when updating
