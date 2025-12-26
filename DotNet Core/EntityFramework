@@ -1,0 +1,88 @@
+Entity Framework
+    It is a ORM(Object Relational Mapper)
+    It let you work with Database using c# classes instead of SQL queries
+
+Why use Entity Framework Core?
+  ❌ Without EF (ADO.NET)
+      Write SQL manually
+      Handle connections
+      Map data yourself
+      More boilerplate code
+  ✅ With EF Core
+      Less code
+      Type-safe
+      Easier maintenance
+      Automatic migrations
+LINQ support
+✅ Faster development
+✅ Cleaner code
+✅ Less error-prone
+
+------------------------------------------------------------------------------------------------------
+
+How Linq code translated to sql query
+
+LINQ Code
+   ↓
+Expression Tree
+   ↓
+EF Core Translator
+   ↓
+SQL Query
+   ↓
+Database
+   ↓
+C# Objects
+
+---------------------------------------------------------------------------------------- IMPORTANT Performance -------------------------------------------------------------------------------------------------------------
+
+context.Users.ToList(); - Used to fetch all the data
+    👉 EF Core immediately executes SQL
+    👉 Loads ALL matching rows into memory
+    👉 Converts them into C# objects
+
+This is called materialization.
+------------------------------------------------------------------------------------
+Bad code 
+var users = context.Users.ToList()
+                         .Where(u => u.Age > 18);
+
+so sql executed-  SELECT * FROM Users - since we writing ToList() before filtering
+filtering happens in c# 
+
+Note - all the users loaded in memory and filtering happening in c#
+        📌 This is slow, memory-heavy, and scales badly.
+------------------------------------------------------------------------------------
+
+Good code
+var users = context.Users
+                   .Where(u => u.Age > 18)
+                   .ToList();
+
+since we puts .ToList() after the filtering
+so EF converts Linq -> sql as
+    SELECT * FROM Users where age > 18
+
+only requied data is fetched
+Fast and efficient
+
+-------------------------------------------------------------------------------------
+
+Pagination fetch
+
+var users = context.Users
+                   .Where(u => u.Age > 18)
+                   .ToList();
+
+SELECT *
+FROM Users
+ORDER BY Id
+OFFSET 20 ROWS FETCH NEXT 10 ROWS ONLY
+
+-------------------------------------------------------------------------------------
+
+Golden Rules (Memorize These)
+    ✅ Always delay ToList()
+    ✅ Never call ToList() before Where
+    ✅ Think: SQL first, C# later
+    ✅ Use Select() to reduce columns
