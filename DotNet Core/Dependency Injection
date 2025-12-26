@@ -1,1 +1,103 @@
+// Dependency Injection
+      It is a design pattern where object given(Injected) a things that they needed
+      Instead of creating them by themselves
+
+Why Dependency Injection?
+    DI helps to:
+      ✅ Reduce tight coupling
+      ✅ Improve testability
+      ✅ Make code clean and maintainable
+      ✅ Easily replace implementations
+      ✅ Follow SOLID principles (especially Dependency Inversion)
+
+Where is DI used in ASP.NET Core?
+      ASP.NET Core has a built-in DI container.
+    DI is used in:
+      Controllers
+      Middleware
+      Services
+      Minimal APIs
+📍 Dependencies are registered in Program.cs
+
+How Dependency Injection Works (Flow)
+    Register service in Program.cs
+    Request service in constructor
+    ASP.NET Core injects the object automatically
+
+------------------------------------------------------------------------------------------- Clear Explanation ------------------------------------------------------------------------------------------------
+
+public class Student
+{
+    public void Study()
+    {
+        Book book = new Book();
+        book.Read();
+    }
+}
+
+What is happening?
+    Student creates a Book
+    Student is dependent on Book
+
+Why is this a problem?
+
+❌ If tomorrow you want:
+    EBook instead of Book
+    AudioBook instead of Book
+This is called tight coupling
+
+Simple terms - What is Dependency Injection
+    Dependency Injection means:
+        “Don’t create what you need.
+        Ask for it, and someone else will give it to you.”
+
+----------------------------------------------------------------------------------------- Example ----------------------------------------------------------------------------------------------------------------------
+
+// Interface
+public interface IMessageService
+{
+    string Send();
+}
+
+// Class for Email
+public class EmailService : IMessageService
+{
+    public string Send()
+    {
+        return "Email sent";
+    }
+}
+
+// Class for SMS
+public class SmsService : IMessageService
+{
+    public string Send()
+    {
+        return "SMS sent";
+    }
+}
+
+// Program.cs 
+builder.Services.AddScoped<IMessageService, EmailService>();
+builder.Services.AddScoped<IMessageService, SmsService>();
+
+
+// Controller
+public class MessageController : Controller
+{
+    private readonly IMessageService _messageService;
+
+    public MessageController(IMessageService messageService)
+    {
+        _messageService = messageService;
+    }
+
+    public string Send()
+    {
+        return _messageService.Send();
+    }
+}
+------------------------------------------------------------------------------- Addscoped, Addtransient, AddSingleton ----------------------------------------------------------------------------------------
+
+
 
