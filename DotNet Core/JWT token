@@ -1,0 +1,29 @@
+HEADER . PAYLOAD . SIGNATURE
+
+Header(Algorithm + Token Type)
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+alg: Algorithm used to sign the token
+typ: Token type (JWT)
+--------------------------------------------------------------------
+Payload(Claims / Data)
+{
+  "sub": "123",
+  "name": "Sethu",
+  "role": "User",
+  "iat": 1700000000,
+  "exp": 1700003600
+}
+---------------------------------------------------------------------
+Signature (Security Part)
+signature = HMACSHA256(
+    base64UrlEncode(header) + "." + base64UrlEncode(payload),
+    secretKey
+)
+
+V4k8Z8yqK8mN6zZpZ0Fz9gQkqXQ9kz6hP1L5Zs
+
+
