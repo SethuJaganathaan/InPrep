@@ -97,7 +97,3 @@ public class MessageController : Controller
         return _messageService.Send();
     }
 }
-------------------------------------------------------------------------------- Addscoped, Addtransient, AddSingleton ----------------------------------------------------------------------------------------
-
-
-
