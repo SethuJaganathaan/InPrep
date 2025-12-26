@@ -1,0 +1,33 @@
+Representational state transfer - Application Programming Interface
+    It is a way for two application to interact with each other through internet using HTTP
+
+Uses url to access data
+Uses HTTP method (GET, PUT, POST, DELETE)
+Usually send and recieve JSON data
+
+
+Why do we use REST API?
+    Because it is:
+      ✅ Simple – Uses HTTP
+      ✅ Fast – Lightweight JSON data
+      ✅ Scalable – Works well for large systems
+      ✅ Platform independent – Any language can use it
+      ✅ Stateless – Each request is independent
+
+REST API = communication bridge between systems
+
+------------------------------------------------------------------------------- RESTfull api ----------------------------------------------------------------------------------------
+
+Rest
+  Representational State Transfer
+  It is a set of rules/styles designing how two application to communicate over internet usually between a client(Browser, mobile app) and a server
+
+Note
+  It is not a Language or Framework
+  It is an architecture style.
+
+RestFull api
+  API that follows the REST rules
+  API designed using rest priniciples
+
+REST rules make APIs simple, scalable, and predictable.
