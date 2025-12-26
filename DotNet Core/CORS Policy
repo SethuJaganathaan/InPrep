@@ -1,1 +1,35 @@
+// CORS 
+    CORS (Cross-Origin Resource Sharing) is a browser security feature.
 
+It controls which web applications (origins) are allowed to call your API.
+  🔹 An origin = protocol + domain + port
+Examples:
+  https://example.com
+  http://localhost:3000
+
+
+Where is CORS used in ASP.NET Core?
+    CORS is configured in two places:
+      Services configuration (Program.cs)
+      Middleware pipeline (app.UseCors())
+    You can apply CORS:
+      Globally (entire API)
+      Per controller
+      Per action
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
+builder.Services.AddControllers();
+
+var app = builder.Build();
