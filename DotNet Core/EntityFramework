@@ -86,3 +86,17 @@ Golden Rules (Memorize These)
     ✅ Never call ToList() before Where
     ✅ Think: SQL first, C# later
     ✅ Use Select() to reduce columns
+
+------------------------------------------------------------------------------------- AsNoTracking() ----------------------------------------------------------------------------------------------------------------
+
+
+AsNoTracking is only read data
+don't track the changes of of the objects
+
+By default, EF Core tracks every entity it reads from the database.
+Tracking means:
+    EF keeps a copy of the object
+    EF remembers original values
+    EF watches for changes
+
+only used when the data is read! (Max performance boost)
