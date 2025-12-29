@@ -50,6 +50,20 @@ C#
 14. Dependency injection cycle and implement
 15. IEnumerable, Iquerryable, Icollections, IList
 
+Indexing for EF
+Transactions
+Concurrency handling
+EF Core vs Dapper (real benchmark)
+
+EF Core Migrations (from ZERO level)
+
+I can continue with:
+1️⃣ Transactions (very important)
+2️⃣ Indexes (performance)
+3️⃣ Concurrency (RowVersion)
+4️⃣ EF Core interview questions
+5️⃣ Complete CRUD best practices
+
 ---------------------------------------------
 mvc
 
