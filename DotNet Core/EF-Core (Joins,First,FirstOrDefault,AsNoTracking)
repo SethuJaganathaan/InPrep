@@ -44,3 +44,62 @@ What changes?
   Read-only data
 
 ❌ Don’t use AsNoTracking when updating
+
+-------------------------------------------------------------------------------------- Transaction,rollback,commit --------------------------------------------------------------------------------------------
+
+Transaction in EF-core
+        All operation succedd or all fails
+    E.g
+        Banking money transfer if pass debit succedd else credit fails - debit rollback
+
+Why Transaction
+    Without transaction:
+        Partial data saved
+        Data inconsistency
+
+example code
+using var transaction = context.Database.BeginTransaction();
+
+try
+{
+    var user = new User { Name = "Sethu" };
+    context.Users.Add(user);
+    context.SaveChanges();
+
+    var order = new Order { UserId = user.Id, Total = 500 };
+    context.Orders.Add(order);
+    context.SaveChanges();
+
+    transaction.Commit();
+}
+catch
+{
+    transaction.Rollback();
+}
+
+--------------------------------------------------------------------------------------------- Index -----------------------------------------------------------------------------------------------
+
+What is an Index?
+        An index is like: Book index page → faster search
+    Without index:
+        Full table scan 
+
+example code
+[Index(nameof(Email))]
+public class User
+{
+    public int Id { get; set; }
+    public string Email { get; set; }
+}
+
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<User>()
+        .HasIndex(u => u.Email)
+        .IsUnique();
+}
+
+When to Use Indexes
+    ✔ Search columns
+    ✔ Foreign keys
+    ✔ Email, Username
