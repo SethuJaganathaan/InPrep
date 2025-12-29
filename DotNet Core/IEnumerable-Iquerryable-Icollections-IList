@@ -1,1 +1,112 @@
+IEnumerable
+    Readonly sequence of the Data
+    Data is fetched into memory first
+    Supports iteration(foreach) only
+
+🔹 Where it is used
+    when data is already loaded in memory
+    In-memory collection
+    Linq to objects
+
+🔹 Why use
+    Simple
+    Low complexity
+    When you don’t need database optimization
+
+IEnumerable<int> numbers = new List<int> { 1, 2, 3, 4 };
+foreach (var n in numbers)
+{
+    Console.WriteLine(n);
+}
+
+EF-Core
+var users = context.Users.ToList(); // Data fetched first
+IEnumerable<User> result = users.Where(u => u.IsActive);
+
+--------------------------------------------------------------------- IQueryable ------------------------------------------------------------------------
+
+🔹 What
+    Represents a query
+    Execution is deferred
+    Translated into SQL(EF Core) 
+
+🔹 Where used
+    Database queries
+    EF Core
+    Large Datasets
+
+🔹 Why use
+    Best performance
+    Filtering happens in the database
+    Generates optimized SQL
+
+IQueryable<User> users = context.Users;
+var activeUsers = users.Where(u => u.IsActive);
+
+---------------------------------------------------------------------- ICollections ---------------------------------------------------------------------
+
+🔹 What
+      Represents a modifiable collection
+      Supports Add / Remove
+      Inherits from IEnumerable
+
+🔹 Where used
+      Entity relationships (EF Core)
+      Navigation properties
+
+🔹 Why use
+      To modify data
+      EF Core needs it to track changes
+
+ICollection<string> names = new List<string>();
+names.Add("Sethu");
+names.Add("Kumar");
+
+public class Order
+{
+    public int Id { get; set; }
+    public ICollection<OrderItem> Items { get; set; }
+}
+
+--------------------------------------------------------------------- IList ------------------------------------------------------------------------------
+
+🔹 What
+      Collection with index access
+      Supports Add, Remove, Update
+      Inherits from ICollection
+
+🔹 Where used
+      UI binding
+      When order and index matter
+
+🔹 Why use
+      Access by index
+      More control than ICollection
+
+IList<string> cities = new List<string>();
+cities.Add("Chennai");
+cities[0] = "Bangalore";
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+IEnumerable
+   ↑
+ICollection
+   ↑
+IList
+
+---------------------------
+
+IQueryable
+   ↑
+IEnumerable
+
+--------------------------
+
+| Interface   | Executes SQL | In Memory | Add/Remove | Index |
+| ----------- | ------------ | --------- | ---------- | ----- |
+| IEnumerable | ❌            | ✅         | ❌          | ❌     |
+| IQueryable  | ✅            | ❌         | ❌          | ❌     |
+| ICollection | ❌            | ✅         | ✅          | ❌     |
+| IList       | ❌            | ✅         | ✅          | ✅     |
 
