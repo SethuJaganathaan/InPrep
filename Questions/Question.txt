@@ -46,7 +46,7 @@ C#
 10. Entity Framework
 11. Approaches (code first and db first)
 12. Linq
-13. Optimise entity framework 
+13. Optimise entity framework - Refer (EntityFramework,EF-Core) file in (DotNet Core)
 14. Dependency injection cycle and implement
 15. IEnumerable, Iquerryable, Icollections, IList
 
