@@ -97,3 +97,14 @@ Null reference
 object reference
 typecast exception
 arthimatic exception
+
+
+Refered Links
+https://zerotomastery.io/blog/dot-NET-interview-questions/
+https://www.interviewbit.com/asp-net-interview-questions/
+
+EntityFramework
+https://www.interviewbit.com/entity-framework-interview-questions/
+https://www.interviewbit.com/asp-net-interview-questions/
+https://www.wecreateproblems.com/interview-questions/entity-framework-interview-questions
+
