@@ -31,3 +31,9 @@ simple code
 Where .NET Used Today
     - Legacy enterprise application
     - Window Only software
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+To disaplay blug data from the db to display in web page
+ - DataGrid (new to me) - alternative is Repeater
+
