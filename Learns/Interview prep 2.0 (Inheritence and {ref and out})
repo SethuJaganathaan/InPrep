@@ -17,6 +17,10 @@ C#
       }
     }
 
+output 
+First10
+Second69
+
 ✔ The variable does not need to be initialized
 ✔ Used when a method must return a value using parameters
 ✔ Method must assign a value before returning.
@@ -35,6 +39,8 @@ class Program
         value = 100; // must assign
     }
 }
+
+Output: 100
 
 ---------------------------------------------------------------------------------
 
