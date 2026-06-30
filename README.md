@@ -4,3 +4,5 @@ Repository contains the Interview Prep questions
   - .NET Core
   - MVC
   - SQL
+
+And some of the Basic of C# Programs
