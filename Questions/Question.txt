@@ -1,30 +1,30 @@
 C#
-1. ref and out keyword - (DONE)
-2. value and reference - (DONE)
-3. cont and readonly  - (DONE)
-4. var and dynamic - (DONE)
-5. contrutor and types - (DONE)
-6. abstract and interface - (DONE)
-7. inheritance - (DONE)
-8. method overloading and overriding - (DONE)
-9. delegates - (DONE)
-10. clr, cls, jit - (DONE)
-11. aot(ahead on time) - (DONE)
-12. garbage collection - (LATER)
-13. dispose and finally - (DONE)
-14. exception handling - (DONE)
-15. manage code and unmanage code - (DONE)
-16. Generics - (PARTIAL)
-17. Dictionary and Hashset - (DONE)
-18. thread , task - (DONE)
-19. async and await - (DONE)
-20. types of class - (DONE)
+1. ref and out keyword 
+2. value and reference
+3. cont and readonly
+4. var and dynamic
+5. contrutor and types
+6. abstract and interface
+7. inheritance
+8. method overloading and overriding
+9. delegates
+10. clr, cls, jit
+11. aot(ahead on time)
+12. garbage collection 
+13. dispose and finally 
+14. exception handling
+15. manage code and unmanage code
+16. Generics
+17. Dictionary and Hashset 
+18. thread , task
+19. async and await 
+20. types of class 
 
 -----------------------------
 .Net FrameworK
-1. what is .Net FrameworK - (DONE)
-2. View state - (DONE)
-3. Globalisation and localization - (DONE)
+1. what is .Net FrameworK 
+2. View state
+3. Globalisation and localization 
 4. event types - 
 5. cookies and its types
 6. aspx means
