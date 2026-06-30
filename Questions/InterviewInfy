@@ -1,0 +1,54 @@
+reverse the string
+
+class Program {
+	static void Main(){
+	string word = "Ilovedotnet";
+	string newempty = "";
+	for(int i = word.Length -1 ; i>=0; i--){
+	newempty += word[i];
+	}
+	Console.writeline(newempty);
+	}
+}
+--------------------------------------------
+
+relational table 
+with stud as (
+select stududentid, studentname
+from student
+)
+select * from student;
+
+------------------------------
+
+cluster index syntax
+
+create CLUSTERED INDEX 
+studenid on student(studenid)
+
+--------------------------------
+
+create studentlogin
+as 
+Begin
+select id,studen...
+end
+
+create function studentmarks(
+studentid int)
+
+return int
+as begin
+return studentid
+end
+-------------------------------------------
+
+select a.studentname,d.departmentname,a.grade
+from student a join department d on
+studenid = departmentid
+
+-----------------------------------------------
+
+dependency syntax!
+
+-----------------------------------------------
